@@ -3,6 +3,10 @@
 /*
  * HelloSandwich.cs
  * Created by Brian Bos
+ * 
+ * I am using \n instead of System.Environment.NewLine here.
+ * It works in the Windows Visual Studio output console,
+ * and that's enough coverage for this basic project.
  */
 
 class HelloSandwich
