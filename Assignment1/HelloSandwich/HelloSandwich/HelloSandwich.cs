@@ -9,19 +9,22 @@
  * and that's enough coverage for this basic project.
  */
 
-class HelloSandwich
+namespace BrianBosAssignment1Namespace
 {
-    static void Main()
+    public class HelloSandwich
     {
-        string inputMouseCount;
-        string inputName;
+        public static void Main()
+        {
+            string inputMouseCount;
+            string inputName;
 
-        Console.WriteLine("What is your name?");
-        inputName = Console.ReadLine();
+            Console.WriteLine("What is your name?");
+            inputName = Console.ReadLine();
 
-        Console.Write("\nHow many mice does it take to make a turkey sandwich?\nAnswer: ");
-        inputMouseCount = Console.ReadLine(); // Numeric input is encouraged, but not required
+            Console.Write("\nHow many mice does it take to make a turkey sandwich?\nAnswer: ");
+            inputMouseCount = Console.ReadLine(); // Numeric input is encouraged, but not required
 
-        Console.Write($"\nEntered name  : {inputName}\nEntered answer: {inputMouseCount}\n\n\"{inputName}\" believes that it takes {inputMouseCount} mice to make a turkey sandwich!\n\n");
+            Console.Write($"\nEntered name  : {inputName}\nEntered answer: {inputMouseCount}\n\n\"{inputName}\" believes that it takes {inputMouseCount} mice to make a turkey sandwich!\n");
+        }
     }
 }

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "IntelliTect.TestTools.Console/0.5.1-beta-180924-1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.0/IntelliTect.TestTools.Console.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/IntelliTect.TestTools.Console.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.1.0": {
         "type": "package",
         "dependencies": {
@@ -211,6 +220,17 @@
     }
   },
   "libraries": {
+    "IntelliTect.TestTools.Console/0.5.1-beta-180924-1": {
+      "sha512": "mnKRE9RtD3fdhH672K3YCT3AsERT8KPafsxCmt39IhVoBkPpKPQrE0M6AN4GIJNoT5W+LuuD4d7uJHwVoi5/HQ==",
+      "type": "package",
+      "path": "intellitect.testtools.console/0.5.1-beta-180924-1",
+      "files": [
+        ".signature.p7s",
+        "intellitect.testtools.console.0.5.1-beta-180924-1.nupkg.sha512",
+        "intellitect.testtools.console.nuspec",
+        "lib/netcoreapp2.0/IntelliTect.TestTools.Console.dll"
+      ]
+    },
     "Microsoft.NETCore.App/2.1.0": {
       "sha512": "AvT774nTFgU8cYcGO9j1EMwuayKslxqYTurg32HGpWa2hEYNuW2+XgYVVNcZe6Ndbr84QX6fwaOZfd5n+1m2OA==",
       "type": "package",
@@ -677,6 +697,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "IntelliTect.TestTools.Console >= 0.5.1-beta-180924-1",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -721,6 +742,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "IntelliTect.TestTools.Console": {
+            "target": "Package",
+            "version": "[0.5.1-beta-180924-1, )"
+          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.1.0, )",

@@ -1,14 +1,25 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    "signature": "caa17cff387eaacb92c2e97d3ab6cca8e065fbbd"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "HelloSandwich/1.0.0": {
+        "dependencies": {
+          "IntelliTect.TestTools.Console": "0.5.1-beta-180924-1"
+        },
         "runtime": {
           "HelloSandwich.dll": {}
+        }
+      },
+      "IntelliTect.TestTools.Console/0.5.1-beta-180924-1": {
+        "runtime": {
+          "lib/netcoreapp2.0/IntelliTect.TestTools.Console.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
         }
       }
     }
@@ -18,6 +29,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "IntelliTect.TestTools.Console/0.5.1-beta-180924-1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mnKRE9RtD3fdhH672K3YCT3AsERT8KPafsxCmt39IhVoBkPpKPQrE0M6AN4GIJNoT5W+LuuD4d7uJHwVoi5/HQ==",
+      "path": "intellitect.testtools.console/0.5.1-beta-180924-1",
+      "hashPath": "intellitect.testtools.console.0.5.1-beta-180924-1.nupkg.sha512"
     }
   }
 }
