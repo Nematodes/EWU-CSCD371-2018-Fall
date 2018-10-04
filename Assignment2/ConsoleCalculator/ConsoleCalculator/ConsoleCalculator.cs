@@ -24,6 +24,14 @@ namespace BrianBosAssignment2Namespace
             int userInputStringPosition;
             char[] validCharacters = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', ' ' };
 
+            /*
+             * There is a difference between System.Environment.Newline and \n.
+             *
+             * \n is simply the newline UTF-16 character code
+             * 
+             * System.Environment.Newline is defined to be \r\n for Windows platforms (carriage return + line feed, what Windows expects a true new line to look like),
+             * and \n for Mac and Unix-based platforms (where \n on its own is seen as a normal new line.)
+             */
             Console.WriteLine($"ConsoleCalculator is now running.{Environment.NewLine}Enter \"Bye\" to quit the program.{Environment.NewLine}");
 
             while (true)
