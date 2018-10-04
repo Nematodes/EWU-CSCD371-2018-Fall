@@ -22,7 +22,7 @@ namespace BrianBosAssignment2Namespace
             int secondOperand;
             string userInput;
             int userInputStringPosition;
-            char[] validCharacters = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', ' ' };
+            char[] validCharacters = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', ' ' };
 
             Console.WriteLine($"ConsoleCalculator is now running.{Environment.NewLine}Enter \"Bye\" to quit the program.{Environment.NewLine}");
 
@@ -64,8 +64,6 @@ namespace BrianBosAssignment2Namespace
                     continue;
                 }
 
-                userInput = userInput.Replace(" ", "");
-
                 firstOperand = getOperand(userInput, 0, out userInputStringPosition);
 
                 if (userInputStringPosition == -1)
@@ -82,6 +80,11 @@ namespace BrianBosAssignment2Namespace
                 }
 
                 int equationResult = 0;
+
+                if (userInputStringPosition != userInput.Length)
+                {
+                    Console.WriteLine("Warning: This application only supports 2 operands. All characters after the second operand were ignored.");
+                }
 
                 if (userInputStringPosition != -1)
                 {
@@ -136,17 +139,37 @@ namespace BrianBosAssignment2Namespace
 
         static int getOperand(string equationString, int startIndex, out int operandEndStringPosition)
         {
+            bool isOperandNegative = false;
             int stringPosition = startIndex;
             int tempOperand = 0;
 
+            while (stringPosition < equationString.Length && equationString[stringPosition] == ' ')
+            {
+                stringPosition++;
+            }
+
             if (stringPosition >= equationString.Length)
             {
-                Console.WriteLine($"Error: stringPosition was greater than or equal to equationString.Length in method getOperand(){Environment.NewLine}");
+                Console.WriteLine($"Error: Invalid equation (stringPosition >= equationString.Length in method getOperand()){Environment.NewLine}");
                 operandEndStringPosition = -1;
                 return 0;
             }
 
-            while (equationString[stringPosition] != '+' && equationString[stringPosition] != '-' && equationString[stringPosition] != '*' && equationString[stringPosition] != '/')
+            if (equationString[stringPosition] == '-')
+            {
+                isOperandNegative = true;
+                stringPosition++;
+
+                // Admittedly an inelegant solution (large "not equal to" chain), but it is fully functional
+                if (stringPosition >= equationString.Length || (equationString[stringPosition] != '0' && equationString[stringPosition] != '1' && equationString[stringPosition] != '2' && equationString[stringPosition] != '3' && equationString[stringPosition] != '4' && equationString[stringPosition] != '5' && equationString[stringPosition] != '6' && equationString[stringPosition] != '7' && equationString[stringPosition] != '8' && equationString[stringPosition] != '9'))
+                {
+                    Console.WriteLine($"Error: A lonely negative sign has made its way into getOperand(){Environment.NewLine}");
+                    operandEndStringPosition = -1;
+                    return 0;
+                }
+            }
+            
+            while (equationString[stringPosition] != '+' && equationString[stringPosition] != '-' && equationString[stringPosition] != '*' && equationString[stringPosition] != '/' && equationString[stringPosition] != ' ')
             {
                 checked
                 {
@@ -157,7 +180,8 @@ namespace BrianBosAssignment2Namespace
                     }
                     catch (OverflowException)
                     {
-                        Console.WriteLine($"Error: An operand was larger than {int.MaxValue} (that is, int.MaxValue){Environment.NewLine}");
+                        // Minor quirk: ints are allowed to contain the value -2147483648 (int.MinValue), but doing arithmetic on that value triggers an overflow exception, even if it doesn't overflow (such subtracting 0 or adding 1)
+                        Console.WriteLine($"Error: An operand was larger than {int.MaxValue} or smaller than or equal to {int.MinValue} (int.MaxValue and int.MinValue, respectively){Environment.NewLine}");
                         operandEndStringPosition = -1;
                         return 0;
                     }
@@ -169,6 +193,16 @@ namespace BrianBosAssignment2Namespace
                 {
                     break;
                 }
+            }
+
+            if (isOperandNegative)
+            {
+                tempOperand *= -1;
+            }
+
+            while (stringPosition < equationString.Length && equationString[stringPosition] == ' ')
+            {
+                stringPosition++;
             }
 
             operandEndStringPosition = stringPosition;
