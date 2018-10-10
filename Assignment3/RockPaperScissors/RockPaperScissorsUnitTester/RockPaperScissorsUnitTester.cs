@@ -12,41 +12,73 @@ namespace BrianBosAssignment3Namespace
     public class RockPaperScissorsUnitTester
     {
         [TestMethod]
-        public void TestCalculateDealtDamage()
+        public void TestCalculateDealtDamageRockRock()
         {
             (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Rock, RockPaperScissors.GameAction.Rock);
             Assert.AreEqual(opponentDamageTaken, 0);
             Assert.AreEqual(playerDamageTaken, 0);
+        }
 
-            (opponentDamageTaken, playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Rock, RockPaperScissors.GameAction.Paper);
+        [TestMethod]
+        public void TestCalculateDealtDamageRockPaper()
+        {
+            (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Rock, RockPaperScissors.GameAction.Paper);
             Assert.AreEqual(opponentDamageTaken, 0);
             Assert.AreEqual(playerDamageTaken, 10);
+        }
 
-            (opponentDamageTaken, playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Rock, RockPaperScissors.GameAction.Scissors);
+        [TestMethod]
+        public void TestCalculateDealtDamageRockScissors()
+        {
+            (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Rock, RockPaperScissors.GameAction.Scissors);
             Assert.AreEqual(opponentDamageTaken, 20);
             Assert.AreEqual(playerDamageTaken, 0);
+        }
 
-            (opponentDamageTaken, playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Paper, RockPaperScissors.GameAction.Rock);
+        [TestMethod]
+        public void TestCalculateDealtDamagePaperRock()
+        {
+            (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Paper, RockPaperScissors.GameAction.Rock);
             Assert.AreEqual(opponentDamageTaken, 10);
             Assert.AreEqual(playerDamageTaken, 0);
+        }
 
-            (opponentDamageTaken, playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Paper, RockPaperScissors.GameAction.Paper);
+        [TestMethod]
+        public void TestCalculateDealtDamagePaperPaper()
+        {
+            (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Paper, RockPaperScissors.GameAction.Paper);
             Assert.AreEqual(opponentDamageTaken, 0);
             Assert.AreEqual(playerDamageTaken, 0);
+        }
 
-            (opponentDamageTaken, playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Paper, RockPaperScissors.GameAction.Scissors);
+        [TestMethod]
+        public void TestCalculateDealtDamagePaperScissors()
+        {
+            (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Paper, RockPaperScissors.GameAction.Scissors);
             Assert.AreEqual(opponentDamageTaken, 0);
             Assert.AreEqual(playerDamageTaken, 15);
+        }
 
-            (opponentDamageTaken, playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Scissors, RockPaperScissors.GameAction.Rock);
+        [TestMethod]
+        public void TestCalculateDealtDamageScissorsRock()
+        {
+            (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Scissors, RockPaperScissors.GameAction.Rock);
             Assert.AreEqual(opponentDamageTaken, 0);
             Assert.AreEqual(playerDamageTaken, 20);
+        }
 
-            (opponentDamageTaken, playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Scissors, RockPaperScissors.GameAction.Paper);
+        [TestMethod]
+        public void TestCalculateDealtDamageScissorsPaper()
+        {
+            (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Scissors, RockPaperScissors.GameAction.Paper);
             Assert.AreEqual(opponentDamageTaken, 15);
             Assert.AreEqual(playerDamageTaken, 0);
+        }
 
-            (opponentDamageTaken, playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Scissors, RockPaperScissors.GameAction.Scissors);
+        [TestMethod]
+        public void TestCalculateDealtDamageScissorsScissors()
+        {
+            (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Scissors, RockPaperScissors.GameAction.Scissors);
             Assert.AreEqual(opponentDamageTaken, 0);
             Assert.AreEqual(playerDamageTaken, 0);
         }
