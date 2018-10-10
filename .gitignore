@@ -344,8 +344,4 @@ bin/
 .DS_Store
 
 # Remove VS Code Configuration Folder
-<<<<<<< HEAD
 .vscode/
-=======
-.vscode/
->>>>>>> 0a27711f4faa569fd610137756833e742ee7408a

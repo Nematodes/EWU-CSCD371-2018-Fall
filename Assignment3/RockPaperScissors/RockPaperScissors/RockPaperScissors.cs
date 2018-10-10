@@ -55,11 +55,11 @@ namespace BrianBosAssignment3Namespace
 
                     GameAction playerAction;
 
-                    if (String.Compare(playerInput, "rock") == 0)
+                    if (playerInput.Equals("rock"))
                     {
                         playerAction = GameAction.Rock;
                     }
-                    else if (String.Compare(playerInput, "paper") == 0)
+                    else if (playerInput.Equals("paper"))
                     {
                         playerAction = GameAction.Paper;
                     }
@@ -116,7 +116,7 @@ namespace BrianBosAssignment3Namespace
 
                 Console.Write("Would you like to play another round? (y/n) ");
                 playerInput = Console.ReadLine();
-            } while (String.Compare(playerInput, "y") == 0);
+            } while (playerInput.Equals("y"));
         }
 
         /*
@@ -190,7 +190,11 @@ namespace BrianBosAssignment3Namespace
         // The assignment specifications do state that valid input will always be given...but that would make the program more boring than it already is
         public static bool ValidatePlayerActionInput(String playerInput)
         {
-            if (String.Compare(playerInput, "rock") == 0 || String.Compare(playerInput, "paper") == 0 || String.Compare(playerInput, "scissors") == 0)
+            if (playerInput == null)
+            {
+                return false;
+            }
+            else if (playerInput.Equals("rock") || playerInput.Equals("paper") || playerInput.Equals("scissors"))
             {
                 return true;
             }

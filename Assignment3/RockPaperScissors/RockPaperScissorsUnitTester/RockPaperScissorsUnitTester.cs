@@ -12,7 +12,7 @@ namespace BrianBosAssignment3Namespace
     public class RockPaperScissorsUnitTester
     {
         [TestMethod]
-        public void TestCalculateDealtDamageRockRock()
+        public void TestCalculateDealtDamage_RockRock()
         {
             (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Rock, RockPaperScissors.GameAction.Rock);
             Assert.AreEqual(opponentDamageTaken, 0);
@@ -20,7 +20,7 @@ namespace BrianBosAssignment3Namespace
         }
 
         [TestMethod]
-        public void TestCalculateDealtDamageRockPaper()
+        public void TestCalculateDealtDamage_RockPaper()
         {
             (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Rock, RockPaperScissors.GameAction.Paper);
             Assert.AreEqual(opponentDamageTaken, 0);
@@ -28,7 +28,7 @@ namespace BrianBosAssignment3Namespace
         }
 
         [TestMethod]
-        public void TestCalculateDealtDamageRockScissors()
+        public void TestCalculateDealtDamage_RockScissors()
         {
             (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Rock, RockPaperScissors.GameAction.Scissors);
             Assert.AreEqual(opponentDamageTaken, 20);
@@ -36,7 +36,7 @@ namespace BrianBosAssignment3Namespace
         }
 
         [TestMethod]
-        public void TestCalculateDealtDamagePaperRock()
+        public void TestCalculateDealtDamage_PaperRock()
         {
             (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Paper, RockPaperScissors.GameAction.Rock);
             Assert.AreEqual(opponentDamageTaken, 10);
@@ -44,7 +44,7 @@ namespace BrianBosAssignment3Namespace
         }
 
         [TestMethod]
-        public void TestCalculateDealtDamagePaperPaper()
+        public void TestCalculateDealtDamage_PaperPaper()
         {
             (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Paper, RockPaperScissors.GameAction.Paper);
             Assert.AreEqual(opponentDamageTaken, 0);
@@ -52,7 +52,7 @@ namespace BrianBosAssignment3Namespace
         }
 
         [TestMethod]
-        public void TestCalculateDealtDamagePaperScissors()
+        public void TestCalculateDealtDamage_PaperScissors()
         {
             (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Paper, RockPaperScissors.GameAction.Scissors);
             Assert.AreEqual(opponentDamageTaken, 0);
@@ -60,7 +60,7 @@ namespace BrianBosAssignment3Namespace
         }
 
         [TestMethod]
-        public void TestCalculateDealtDamageScissorsRock()
+        public void TestCalculateDealtDamage_ScissorsRock()
         {
             (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Scissors, RockPaperScissors.GameAction.Rock);
             Assert.AreEqual(opponentDamageTaken, 0);
@@ -68,7 +68,7 @@ namespace BrianBosAssignment3Namespace
         }
 
         [TestMethod]
-        public void TestCalculateDealtDamageScissorsPaper()
+        public void TestCalculateDealtDamage_ScissorsPaper()
         {
             (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Scissors, RockPaperScissors.GameAction.Paper);
             Assert.AreEqual(opponentDamageTaken, 15);
@@ -76,7 +76,7 @@ namespace BrianBosAssignment3Namespace
         }
 
         [TestMethod]
-        public void TestCalculateDealtDamageScissorsScissors()
+        public void TestCalculateDealtDamage_ScissorsScissors()
         {
             (int opponentDamageTaken, int playerDamageTaken) = RockPaperScissors.CalculateDealtDamage(RockPaperScissors.GameAction.Scissors, RockPaperScissors.GameAction.Scissors);
             Assert.AreEqual(opponentDamageTaken, 0);
@@ -120,13 +120,23 @@ namespace BrianBosAssignment3Namespace
             Assert.IsTrue(RockPaperScissors.ValidatePlayerActionInput("rock"));
             Assert.IsTrue(RockPaperScissors.ValidatePlayerActionInput("paper"));
             Assert.IsTrue(RockPaperScissors.ValidatePlayerActionInput("scissors"));
+        }
 
+        [TestMethod]
+        public void TestValidateUserActionInput_InvalidData()
+        {
             Assert.IsFalse(RockPaperScissors.ValidatePlayerActionInput("Rock"));
             Assert.IsFalse(RockPaperScissors.ValidatePlayerActionInput(" rock"));
             Assert.IsFalse(RockPaperScissors.ValidatePlayerActionInput("rock paper"));
             Assert.IsFalse(RockPaperScissors.ValidatePlayerActionInput("paperscissors"));
             Assert.IsFalse(RockPaperScissors.ValidatePlayerActionInput("tangerine"));
             Assert.IsFalse(RockPaperScissors.ValidatePlayerActionInput(""));
+        }
+
+        [TestMethod]
+        public void TestValidateUserActionInput_NullData()
+        {
+            Assert.IsFalse(RockPaperScissors.ValidatePlayerActionInput(null));
         }
     }
 }
