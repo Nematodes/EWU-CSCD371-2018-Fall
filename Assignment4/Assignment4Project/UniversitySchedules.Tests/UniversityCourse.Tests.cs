@@ -1,103 +1,197 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace BrianBosAssignment4Namespace
 {
     [TestClass]
     public class UniversityCourseTests
     {
+        private UniversityCourse TestUniversityCourse { get; set; }
+
         [TestMethod]
         public void DefaultConstructor_DefaultNameIsUnnamedCourse()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse();
+            TestUniversityCourse = new UniversityCourse();
 
-            Assert.IsTrue(myUniversityCourse.Name.Equals("Unnamed Course"));
+            Assert.IsTrue(TestUniversityCourse.Name.Equals("Unnamed Course"));
         }
 
         [TestMethod]
         public void DefaultConstructor_DefaultNumberOfAttendeesIsZero()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse();
+            TestUniversityCourse = new UniversityCourse();
 
-            Assert.IsTrue(myUniversityCourse.NumberOfAttendees == 0);
+            Assert.IsTrue(TestUniversityCourse.NumberOfAttendees == 0);
         }
 
         [TestMethod]
         public void DefaultConstructor_DefaultStartDateIsThursday1January1970()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse();
+            TestUniversityCourse = new UniversityCourse();
 
-            Assert.IsTrue(myUniversityCourse.StartDate.Equals("Thursday, 1 January 1970"));
+            Assert.IsTrue(TestUniversityCourse.StartDate.Equals("Thursday, 1 January 1970"));
         }
 
         [TestMethod]
         public void DefaultConstructor_DefaultEndDateIsMonday5January1970()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse();
+            TestUniversityCourse = new UniversityCourse();
 
-            Assert.IsTrue(myUniversityCourse.EndDate.Equals("Monday, 5 January 1970"));
+            Assert.IsTrue(TestUniversityCourse.EndDate.Equals("Monday, 5 January 1970"));
+        }
+
+        [TestMethod]
+        public void DefaultConstructor_DefaultWeeklyScheduleIsNotApplicable()
+        {
+            TestUniversityCourse = new UniversityCourse();
+
+            Assert.IsTrue(TestUniversityCourse.WeeklySchedule.Equals("N/A"));
         }
 
         [TestMethod]
         public void Constructor_ValuesSet_NameIsSet()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5);
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
 
-            Assert.IsTrue(myUniversityCourse.Name.Equals("Steganography"));
+            Assert.IsTrue(TestUniversityCourse.Name.Equals("Steganography"));
         }
 
         [TestMethod]
         public void Constructor_ValuesSet_NumberOfAttendeesIsSet()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5);
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
 
-            Assert.IsTrue(myUniversityCourse.NumberOfAttendees == 20);
+            Assert.IsTrue(TestUniversityCourse.NumberOfAttendees == 20);
         }
 
         [TestMethod]
         public void Constructor_ValuesSet_StartDateIsSet()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5);
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
 
-            Assert.IsTrue(myUniversityCourse.StartDate.Equals("Wednesday, September 19 2018"));
+            Assert.IsTrue(TestUniversityCourse.StartDate.Equals("Wednesday, September 19 2018"));
         }
 
         [TestMethod]
         public void Constructor_ValuesSet_EndDateIsSet()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5);
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
 
-            Assert.IsTrue(myUniversityCourse.EndDate.Equals("Friday, December 7 2018"));
+            Assert.IsTrue(TestUniversityCourse.EndDate.Equals("Friday, December 7 2018"));
         }
 
         [TestMethod]
         public void Constructor_ValuesSet_CreditHoursIsSet()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5);
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
 
-            Assert.IsTrue(myUniversityCourse.CreditHours == 4);
+            Assert.IsTrue(TestUniversityCourse.CreditHours == 4);
         }
 
         [TestMethod]
         public void Constructor_ValuesSet_NumberOfWaitlistedAttendeesIsSet()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5);
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
 
-            Assert.IsTrue(myUniversityCourse.NumberOfWaitlistedAttendees == 5);
+            Assert.IsTrue(TestUniversityCourse.NumberOfWaitlistedAttendees == 5);
         }
 
         [TestMethod]
         public void Constructor_ValuesSet_TotalAttendingStudentsIsValid()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5);
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
 
-            Assert.IsTrue(myUniversityCourse.TotalAttendingStudents == 25);
+            Assert.IsTrue(TestUniversityCourse.TotalAttendingStudents == 25);
+        }
+
+        [TestMethod]
+        public void Constructor_ValuesSet_WeeklyScheduleIsSet()
+        {
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
+
+            Assert.IsTrue(TestUniversityCourse.WeeklySchedule.Equals("Tuesdays and Thursdays, 3:00-5:50 PM"));
+        }
+
+        [TestMethod]
+        public void Constructor_ValuesNullOrZero_AllValuesSet()
+        {
+            TestUniversityCourse = new UniversityCourse(null, 0, null, null, 0, 0, null);
+
+            Assert.IsTrue(TestUniversityCourse.CreditHours == 0);
+            Assert.IsTrue(TestUniversityCourse.EndDate == null);
+            Assert.IsTrue(TestUniversityCourse.Name == null);
+            Assert.IsTrue(TestUniversityCourse.NumberOfAttendees == 0);
+            Assert.IsTrue(TestUniversityCourse.NumberOfWaitlistedAttendees == 0);
+            Assert.IsTrue(TestUniversityCourse.StartDate == null);
+            Assert.IsTrue(TestUniversityCourse.TotalAttendingStudents == 0);
+            Assert.IsTrue(TestUniversityCourse.WeeklySchedule == null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(System.ArgumentOutOfRangeException))]
+        public void Constructor_NegativeNumberOfAttendees_ArgumentOutOfRangeExceptionIsThrown()
+        {
+            TestUniversityCourse = new UniversityCourse("Steganography", -20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
         }
 
         [TestMethod]
         [ExpectedException(typeof(System.ArgumentOutOfRangeException))]
         public void Constructor_NegativeNumberOfWaitlistedAttendees_ArgumentOutOfRangeExceptionIsThrown()
         {
-            UniversityCourse myUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, -100);
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, -100, "Tuesdays and Thursdays, 3:00-5:50 PM");
+        }
+
+        [TestMethod]
+        public void GetSummaryInformation_SummaryIsValid()
+        {
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
+
+            
+            Assert.IsTrue(TestUniversityCourse.GetSummaryInformation().Equals($@"Course name: Steganography{Environment.NewLine
+                                                                              }Enrolled students: 20{Environment.NewLine
+                                                                              }Waitlisted students: 5{Environment.NewLine
+                                                                              }Start date: Wednesday, September 19 2018{Environment.NewLine
+                                                                              }End date: Friday, December 7 2018{Environment.NewLine
+                                                                              }Credit hours: 4{Environment.NewLine
+                                                                              }Weekly schedule: Tuesdays and Thursdays, 3:00-5:50 PM"));
+        }
+
+        [TestMethod]
+        public void NumberOfInstantiatedScheduleItemsIsValid()
+        {
+            // Other tests may run before this one, so NumberOfInstantiatedScheduleItems cannot be assumed to start at zero
+            int initialInstantiatedCourses = UniversityCourse.NumberOfInstantiatedScheduleItems;
+
+            Assert.IsTrue(UniversityCourse.NumberOfInstantiatedScheduleItems == initialInstantiatedCourses);
+
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
+
+            Assert.IsTrue(UniversityCourse.NumberOfInstantiatedScheduleItems == initialInstantiatedCourses + 1);
+
+            UniversityCourse testUniversityCourse2 = new UniversityCourse();
+
+            Assert.IsTrue(UniversityCourse.NumberOfInstantiatedScheduleItems == initialInstantiatedCourses + 2);
+
+            UniversityCourse testUniversityCourse3 = new UniversityCourse();
+            UniversityCourse testUniversityCourse4 = new UniversityCourse();
+
+            Assert.IsTrue(UniversityCourse.NumberOfInstantiatedScheduleItems == initialInstantiatedCourses + 4);
+        }
+
+        [TestMethod]
+        public void Deconstructor_MembersInitialized_ReturnedValuesAreIdentical()
+        {
+            TestUniversityCourse = new UniversityCourse("Steganography", 20, "Wednesday, September 19 2018", "Friday, December 7 2018", 4, 5, "Tuesdays and Thursdays, 3:00-5:50 PM");
+
+            (string Name, int NumberOfAttendees, string StartDate, string EndDate, int CreditHours, int NumberOfWaitlistedAttendees, string WeeklySchedule) = TestUniversityCourse;
+
+            Assert.IsTrue(Name.Equals("Steganography"));
+            Assert.IsTrue(NumberOfAttendees == 20);
+            Assert.IsTrue(StartDate.Equals("Wednesday, September 19 2018"));
+            Assert.IsTrue(EndDate.Equals("Friday, December 7 2018"));
+            Assert.IsTrue(CreditHours == 4);
+            Assert.IsTrue(NumberOfWaitlistedAttendees == 5);
+            Assert.IsTrue(WeeklySchedule.Equals("Tuesdays and Thursdays, 3:00-5:50 PM"));
         }
     }
 }

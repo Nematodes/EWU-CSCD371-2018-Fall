@@ -2,7 +2,7 @@
 
 namespace BrianBosAssignment4Namespace
 {
-    interface ISummarizable
+    public interface ISummarizable
     {
         string GetSummaryInformation();
     }

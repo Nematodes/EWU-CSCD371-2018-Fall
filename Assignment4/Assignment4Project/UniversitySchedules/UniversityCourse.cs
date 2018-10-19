@@ -36,26 +36,40 @@ namespace BrianBosAssignment4Namespace
         {
             get
             {
-                return base.NumberOfAttendees + this.NumberOfWaitlistedAttendees;
+                return NumberOfAttendees + NumberOfWaitlistedAttendees;
             }
         }
 
-        public UniversityCourse() : this("Unnamed Course", 0, "Thursday, 1 January 1970", "Monday, 5 January 1970", 5, 0)
+        public string WeeklySchedule { get; set; }
+
+        public UniversityCourse() : this("Unnamed Course", 0, "Thursday, 1 January 1970", "Monday, 5 January 1970", 5, 0, "N/A")
         {
 
         }
 
-        public UniversityCourse(string name, int numberOfAttendees, string startDate, string endDate, int creditHours, int numberOfWaitlistedAttendees) : base(name, numberOfAttendees)
+        public UniversityCourse(string name, int numberOfAttendees, string startDate, string endDate, int creditHours, int numberOfWaitlistedAttendees, string weeklySchedule) : base(name, numberOfAttendees)
         {
             StartDate = startDate;
             EndDate = endDate;
             CreditHours = creditHours;
             NumberOfWaitlistedAttendees = numberOfWaitlistedAttendees;
+            WeeklySchedule = weeklySchedule;
+        }
+
+        public void Deconstruct(out string name, out int numberOfAttendees, out string startDate, out string endDate, out int creditHours, out int numberOfWaitlistedAttendees, out string weeklySchedule)
+        {
+            (name, numberOfAttendees, startDate, endDate, creditHours, numberOfWaitlistedAttendees, weeklySchedule) = (Name, NumberOfAttendees, StartDate, EndDate, CreditHours, NumberOfWaitlistedAttendees, WeeklySchedule);
         }
 
         public override string GetSummaryInformation()
         {
-            throw new NotImplementedException();
+            return $@"Course name: {Name}{Environment.NewLine
+                     }Enrolled students: {NumberOfAttendees}{Environment.NewLine
+                     }Waitlisted students: {NumberOfWaitlistedAttendees}{Environment.NewLine
+                     }Start date: {StartDate}{Environment.NewLine
+                     }End date: {EndDate}{Environment.NewLine
+                     }Credit hours: {CreditHours}{Environment.NewLine
+                     }Weekly schedule: {WeeklySchedule}";
         }
     }
 }

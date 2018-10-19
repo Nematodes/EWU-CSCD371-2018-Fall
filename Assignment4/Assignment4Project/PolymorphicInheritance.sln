@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScheduleItems", "University
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScheduleItems.Tests", "UniversitySchedules.Tests\ScheduleItems.Tests.csproj", "{D787EA6A-2858-4F7C-BE68-C6DF84D3F410}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summarizer.Tests", "Summarizer.Tests\Summarizer.Tests.csproj", "{FDBE12C3-F3C2-43D4-8086-BC38F65AA8D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D787EA6A-2858-4F7C-BE68-C6DF84D3F410}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D787EA6A-2858-4F7C-BE68-C6DF84D3F410}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D787EA6A-2858-4F7C-BE68-C6DF84D3F410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDBE12C3-F3C2-43D4-8086-BC38F65AA8D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDBE12C3-F3C2-43D4-8086-BC38F65AA8D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDBE12C3-F3C2-43D4-8086-BC38F65AA8D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDBE12C3-F3C2-43D4-8086-BC38F65AA8D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,7 +18,7 @@ namespace BrianBosAssignment4Namespace
 
         public override string GetSummaryInformation()
         {
-            throw new NotImplementedException();
+            return $"Event name: {Name}{Environment.NewLine}Number of attendees: {NumberOfAttendees}{Environment.NewLine}Date: {Date}";
         }
     }
 }
