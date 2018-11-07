@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BrianBosAssignmentFive
+namespace BrianBosAssignmentSix
 {
     // The class "Event" and interface "IEvent" caused some interesting conflicts when deciding on a name for this
     public static class InterfaceEventExtensions

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BrianBosAssignmentFive
+namespace BrianBosAssignmentSix
 {
     public class UniversityCourse : ScheduleItem
     {

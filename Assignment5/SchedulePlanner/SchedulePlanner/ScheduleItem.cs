@@ -1,9 +1,11 @@
 ﻿using System;
 
-namespace BrianBosAssignmentFive
+namespace BrianBosAssignmentSix
 {
     public abstract class ScheduleItem : IEvent
     {
+        //public enum Day
+
         public string Name { get; set; }
 
         private int _NumberOfAttendees;

@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BrianBosAssignmentFive
+namespace BrianBosAssignmentSix
 {
     [TestClass]
     public class InterfaceEventTests
