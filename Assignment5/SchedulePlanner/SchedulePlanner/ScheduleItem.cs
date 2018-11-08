@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BrianBosAssignmentSix
+namespace BrianBosAssignmentFive
 {
     public abstract class ScheduleItem : IEvent
     {

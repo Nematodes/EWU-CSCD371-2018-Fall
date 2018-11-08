@@ -1,4 +1,4 @@
-﻿namespace BrianBosAssignmentSix
+﻿namespace BrianBosAssignmentFive
 {
     public interface IEvent
     {

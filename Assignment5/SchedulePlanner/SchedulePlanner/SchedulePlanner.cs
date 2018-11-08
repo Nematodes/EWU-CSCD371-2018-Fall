@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using static System.Environment;
 
-namespace BrianBosAssignmentSix
+namespace BrianBosAssignmentFive
 {
     public class SchedulePlanner
     {

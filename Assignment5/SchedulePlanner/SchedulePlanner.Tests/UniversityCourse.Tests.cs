@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace BrianBosAssignmentSix
+namespace BrianBosAssignmentFive
 {
     [TestClass]
     public class UniversityCourseTests

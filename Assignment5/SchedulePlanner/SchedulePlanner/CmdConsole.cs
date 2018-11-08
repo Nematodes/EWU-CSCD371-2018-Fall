@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BrianBosAssignmentSix
+namespace BrianBosAssignmentFive
 {
     public class CmdConsole : IConsole
     {
