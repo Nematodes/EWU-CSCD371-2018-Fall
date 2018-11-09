@@ -44,6 +44,11 @@ namespace BrianBosAssignmentSeven
 
         public ManagedThread()
         {
+            /*
+             * Theoretical failure mechanism: TotalThreadInstances overflows
+             * 
+             * This is such an extreme mode of failure that I didn't bother dealing with it.
+             */
             TotalThreadInstances++;
         }
 

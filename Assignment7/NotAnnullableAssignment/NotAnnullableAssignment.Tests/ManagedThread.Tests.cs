@@ -95,6 +95,10 @@ namespace BrianBosAssignmentSeven
                 ManagedThread testManagedThread5 = new ManagedThread(141421, new byte[] { 77, 90 });
             }
 
+            /*
+             * The "between 1 and 5" comes from the expectation that the garbage collector could finalize
+             * anywhere from one to four of the out-of-scope ManagedThread objects by this point in time.
+             */
             Assert.IsTrue(ManagedThread.TotalThreadInstances >= 1 && ManagedThread.TotalThreadInstances < 6);
 
             TestManagedThread.Dispose();
