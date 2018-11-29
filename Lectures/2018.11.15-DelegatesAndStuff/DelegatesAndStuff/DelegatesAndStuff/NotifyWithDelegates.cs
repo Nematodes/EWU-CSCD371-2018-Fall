@@ -51,7 +51,7 @@ namespace DelegatesAndStuff
         }
 
         [TestMethod]
-        public void Notify_GivenLambdaExpression_Success()
+        public void Notify_GivenLocalMethod_Success()
         {
             ButtonWithDelegates button = new ButtonWithDelegates("Ok");
             bool called = false;
@@ -59,6 +59,21 @@ namespace DelegatesAndStuff
             void Notify() { called = true; }
 
             button.Register(Notify);
+            button.Click();
+            Assert.IsTrue(called);
+        }
+
+        [TestMethod]
+        public void Notify_GivenLambdaExpression_Success()
+        {
+            ButtonWithDelegates button = new ButtonWithDelegates("Ok");
+            bool called = false;
+
+            Action notify = () => { called = true; };
+
+            button.Register(Notify);
+            button.Register(
+                ()=> { called = true; });
             button.Click();
             Assert.IsTrue(called);
         }

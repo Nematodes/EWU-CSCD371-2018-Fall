@@ -23,5 +23,22 @@ namespace DelegatesAndStuff
             Assert.IsTrue(callback.Called);
             Assert.IsTrue(Called);
         }
+
+        [TestMethod]
+        public void Notify_GivenLambdaExpression_Success()
+        {
+            Button button = new Button("Ok");
+            bool called = false;
+
+            EventHandler notify = 
+                (sender, args) => { called = true; };
+
+            button.CallbackAction += notify;
+            button.CallbackAction += 
+                (sender, args) => { called = true; };
+
+            button.Click();
+            Assert.IsTrue(called);
+        }
     }
 }
